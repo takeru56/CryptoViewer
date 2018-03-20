@@ -1,0 +1,12 @@
+{ 
+  "name": "CryptoViewer",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "仮想通貨の保有資産を管理",
+  "browser_action": {
+    "default_icon": {
+      "19": "icon19.png"
+    },
+    "default_popup": "index.html"
+  }
+}
