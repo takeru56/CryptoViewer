@@ -1,51 +1,26 @@
 <rate-lists>
-  <ul class="lists-header clearfix" style="list-style-type: none">
-    <li class="reload-btn">更新</li>
-    <li class="edit-btn">編集</li>
-  </ul>
-
+  <h3 class="top-title">
+  <img src="../icon19.png" height="11px">
+  CryptoViewer
+  </h1>
   <ul class="rate-lists" style="list-style-type: none">
     <li class="rate-list" each="{item, i in items}">
-      <div class="rate-list__currency"> {item.name} </div>
-      <div class="rate-list__asset">200</div>
-      <div class="rate-list__rate">¥ {item.rate} </div>
+      <div class="rate-list__icon">
+        <img src="../{item.name}.ico" alt="{item.name}" height="20px">
+      </div>
+      <div class="rate-list__currency"> {item.name}</div>
+      <div class="rate-list__rate">¥ {item.rate}</div>
     </li>
   </ul>
 
   <style scoped>
     :scope{
       display: block;
-      padding-top: 40px;
+      padding-top: 0px;
     }
 
-    .lists-header{
-      padding: 0;
-      margin: 0;
-    }
-
-    .reload-btn{
-      float: left;
-      width: 50px;
-      height: 22px;
-      margin-right: 220px;
-      border-radius: 3px;
-      background: #F8F7FC; 
-      color: #EB4259;
-      line-height: 22px;
+    .top-title{
       text-align: center;
-      cursor: pointer;
-    }
-
-    .edit-btn{
-      float: left;
-      width: 50px;
-      height: 22px;
-      border-radius: 3px;
-      background: #F8F7FC; 
-      color: #EB4259;
-      line-height: 22px;
-      text-align: center;
-      cursor: pointer;
     }
 
     .rate-lists{
@@ -54,28 +29,37 @@
     }
 
     .rate-list{
-      height: 30px;
+      height: 28px;
       border-top: solid 1px #EBECEF;
-      line-height: 30px;
+      line-height: 28px;
     }
 
     .rate-list > div{
-      height: 100%;
       float: left;
+      height: 100%;
+    }
+
+    .rate-list__icon{
+      display:table-cell;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+    }
+
+    .rate-list__icon > img{
+      vertical-align: middle;
+      text-align: center;
     }
 
     .rate-list__currency{
-      width: 100px;
-    }
-
-    .rate-list__asset{
-      width: 100px;
-      text-align: right;
+      text-align: center;
+      width: 40px;
     }
 
     .rate-list__rate{
-      width: 120px;
-      text-align: right;
+      width: 65px;
+      padding-left: 90px;
+      text-align: left;
     }
 
     .clearfix:after{
@@ -87,7 +71,6 @@
   </style>
 
   <script>
-    this.items = opts.rates
+  this.items = opts.rates
   </script>
-  
 </rate-lists>
