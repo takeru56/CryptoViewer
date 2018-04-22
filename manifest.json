@@ -1,6 +1,6 @@
 { 
   "name": "CryptoViewer",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 2,
   "description": "仮想通貨のレートを確認",
   "browser_action": {
