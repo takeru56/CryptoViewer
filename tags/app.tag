@@ -66,9 +66,12 @@
       //convert price from /btc to /jpy
       for(var i = 3; i < 11; i++) {
         if (btc_price !== '...'){
-          self.rates[i].rate = (json[self.rates[i].index].lastPrice * btc_price).toFixed(1)
+          rate = (json[self.rates[i].index].lastPrice * btc_price).toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1})
+          self.rates[i].rate = rate
         }
       }
+
+      self.rates[0].rate = btc_price.toLocaleString()
     
       self.update()
     }).catch()

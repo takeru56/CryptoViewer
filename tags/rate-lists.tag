@@ -8,7 +8,7 @@
       <div class="rate-list__icon">
         <img src="../icons/{item.name}.ico" alt="{item.name}" height="20px">
       </div>
-      <div class="rate-list__currency"> {item.name}</div>
+      <div class="rate-list__name"> {item.name}</div>
       <div class="rate-list__rate">¥ {item.rate}</div>
     </li>
   </ul>
@@ -51,14 +51,15 @@
       text-align: center;
     }
 
-    .rate-list__currency{
+    .rate-list__name{
       text-align: center;
       width: 40px;
+      font-weight: bold;
     }
 
     .rate-list__rate{
-      width: 65px;
-      padding-left: 90px;
+      width: 70px;
+      padding-left: 85px;
       text-align: left;
     }
 
