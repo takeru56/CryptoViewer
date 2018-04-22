@@ -3,3 +3,4 @@
 
 <img src="icon19.png" width="200">
 
+<strong>CHECK IT!! [Chrome WEB Store]:https://chrome.google.com/webstore/detail/cryptoviewer/eajnmaepoiimfdekhbmkngkglemhdjla
