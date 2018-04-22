@@ -6,7 +6,7 @@
   <ul class="rate-lists" style="list-style-type: none">
     <li class="rate-list" each="{item, i in items}">
       <div class="rate-list__icon">
-        <img src="../{item.name}.ico" alt="{item.name}" height="20px">
+        <img src="../icons/{item.name}.ico" alt="{item.name}" height="20px">
       </div>
       <div class="rate-list__currency"> {item.name}</div>
       <div class="rate-list__rate">¥ {item.rate}</div>
