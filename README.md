@@ -1,2 +1,4 @@
 # CryptoViewer
-Chrome's extension to check the total assets of your crypto currency
+![top](icon19.png)
+Chrome's extension to check the rate of crypto currency
+
