@@ -22,23 +22,23 @@ riot.tag2('app', '<rate-lists rates="{rates}"></rate-lists>', 'app,[data-is="app
   fetch(host_zaif + brand[0] ).then(function(response){
     return response.json()
   }).then(function(json) {
-    self.rates[0].rate = json.last_price
+
     self.update()
-  })
+  }).catch(console.log("dd"))
 
   fetch(host_zaif + brand[1] ).then(function(response){
     return response.json()
   }).then(function(json) {
     self.rates[1].rate = json.last_price
     self.update()
-  })
+  }).catch(console.log("dd"))
 
   fetch(host_zaif + brand[2] ).then(function(response){
     return response.json()
   }).then(function(json) {
     self.rates[2].rate = json.last_price
     self.update()
-  })
+  }).catch(console.log("dd"))
 
   self.one('updated', function(){
 
@@ -48,11 +48,13 @@ riot.tag2('app', '<rate-lists rates="{rates}"></rate-lists>', 'app,[data-is="app
       btc_price = self.rates[0].rate
 
       for(var i = 3; i < 11; i++) {
-        self.rates[i].rate = (json[self.rates[i].index].lastPrice * btc_price).toFixed(1)
+        if (btc_price !== '...'){
+          self.rates[i].rate = (json[self.rates[i].index].lastPrice * btc_price).toFixed(1)
+        }
       }
 
       self.update()
-    })
+    }).catch(console.log("dd"))
   })
 
 });
