@@ -1,8 +1,8 @@
 <rate-lists>
   <h3 class="top-title">
-  <img src="../icon19.png" height="11px">
-  CryptoViewer
-  </h1>
+    <img src="../icon19.png" height="11px">
+    CryptoViewer
+  </h3>
   <ul class="rate-lists" style="list-style-type: none">
     <li class="rate-list" each="{item, i in items}">
       <div class="rate-list__icon">
@@ -72,6 +72,6 @@
   </style>
 
   <script>
-  this.items = opts.rates
+    this.items = opts.rates
   </script>
 </rate-lists>

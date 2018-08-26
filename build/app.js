@@ -29,14 +29,14 @@ riot.tag2('app', '<rate-lists rates="{rates}"></rate-lists>', 'app,[data-is="app
   fetch(host_zaif + brand[1] ).then(function(response){
     return response.json()
   }).then(function(json) {
-    self.rates[1].rate = json.last_price
+    self.rates[1].rate = json.last_price.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})
     self.update()
   }).catch()
 
   fetch(host_zaif + brand[2] ).then(function(response){
     return response.json()
   }).then(function(json) {
-    self.rates[2].rate = json.last_price
+    self.rates[2].rate = json.last_price.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})
     self.update()
   }).catch()
 
@@ -48,14 +48,18 @@ riot.tag2('app', '<rate-lists rates="{rates}"></rate-lists>', 'app,[data-is="app
       btc_price = self.rates[0].rate
 
       for(var i = 3; i < 11; i++) {
-        if (btc_price !== '...'){
-          rate = (json[self.rates[i].index].lastPrice * btc_price).toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1})
-          self.rates[i].rate = rate
+        rate_i = json[self.rates[i].index].lastPrice * btc_price
+
+        if (btc_price !== '...' && rate_i < 1000){
+          rate_s = rate_i.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})
+          self.rates[i].rate = rate_s
+        } else if (btc_price !== '...') {
+          rate_s = rate_i.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})
+          self.rates[i].rate = rate_s
         }
       }
 
       self.rates[0].rate = btc_price.toLocaleString()
-
       self.update()
     }).catch()
   })
