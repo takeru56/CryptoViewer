@@ -1,18 +1,14 @@
-{ 
+{
   "name": "CryptoViewer",
-  "version": "1.1",
+  "version": "1.2",
   "manifest_version": 2,
   "description": "仮想通貨のレートを確認",
   "browser_action": {
     "default_icon": {
       "19": "icon19.png"
     },
-    "default_popup": "index.html" 
+    "default_popup": "index.html"
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "permissions": [
-    "https://api.zaif.jp/*",
-    "https://api.binance.com/*"
-  ]
+  "permissions": ["https://api.zaif.jp/*", "https://api.binance.com/*"]
 }
- 
